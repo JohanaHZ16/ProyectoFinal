@@ -33,6 +33,8 @@ public class AppointmentPage {
     @FindBy(xpath = "//a[@class='btn btn-default']")
     public WebElement homeButton;
 
+    @FindBy(id = "radio_program_medicaid")
+    public WebElement program;
 
     public AppointmentPage() {
         PageFactory.initElements(Helper.getDriver(), this);
@@ -44,7 +46,7 @@ public class AppointmentPage {
         waitForElement(sectionAppointment);
         Select facility =new Select(driver.findElement(By.id("combo_facility")));
         facility.selectByValue("Seoul CURA Healthcare Center");
-        driver.findElement(By.id("radio_program_medicaid")).click();
+        program.click();
         datetxt.sendKeys("25/04/2024");
         comentariotxt.sendKeys("Lectura de examenes de Sangre");
         appointmentButton.click();
