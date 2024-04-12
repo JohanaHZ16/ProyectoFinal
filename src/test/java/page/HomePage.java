@@ -2,7 +2,7 @@ package page;
 
 
 
-import org.openqa.selenium.JavascriptExecutor;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Helper;
 
 import java.time.Duration;
-import static utils.Helper.waitForElement;
+
 public class HomePage  {
     @FindBy(xpath = "//a[@id='menu-toggle']")
     public WebElement menu;

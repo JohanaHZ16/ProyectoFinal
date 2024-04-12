@@ -37,7 +37,8 @@ public class AppointmentPage {
     public AppointmentPage() {
         PageFactory.initElements(Helper.getDriver(), this);
     }
-    WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+
+
 
     public void makeAppointment() {
         waitForElement(sectionAppointment);
