@@ -15,9 +15,6 @@ import static utils.Helper.waitForElement;
 
 
 public class AppointmentPage {
-    @FindBy(xpath = "//section[@class='section bg-primary']")
-    public WebElement sectionAppointment;
-
     @FindBy(id = "txt_visit_date")
     public WebElement datetxt;
 
@@ -43,18 +40,17 @@ public class AppointmentPage {
 
 
     public void makeAppointment() {
-        waitForElement(sectionAppointment);
         Select facility =new Select(driver.findElement(By.id("combo_facility")));
         facility.selectByValue("Seoul CURA Healthcare Center");
         program.click();
         datetxt.sendKeys("25/04/2024");
         comentariotxt.sendKeys("Lectura de examenes de Sangre");
+        waitForElement(appointmentButton);
         appointmentButton.click();
 
     }
 
     public void appointmentConfirmation(){
-        waitForElement(confirmacion);
         confirmacion.getText().equals("Please be informed that your appointment has been booked as following:");
         homeButton.click();
     }
